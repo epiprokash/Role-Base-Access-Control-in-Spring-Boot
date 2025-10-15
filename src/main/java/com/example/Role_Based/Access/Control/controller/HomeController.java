@@ -42,5 +42,11 @@ public class HomeController {
     public String manager() {
         return "manager";
     }
+    @GetMapping("/delete/{id}")
+    public String deleteStudent(@org.springframework.web.bind.annotation.PathVariable Long id) {
+    studentService.deleteById(id);
+    return "redirect:/admin";
+}
+
 }
 
